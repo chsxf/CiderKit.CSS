@@ -11,6 +11,21 @@ final class CSSTokenizer {
     private let buffer: String
     private let lastPosition: String.Index
 
+    private let tokenTypeBySymbol: [Character: CSSTokenType] = [
+        "{": .openingBrace,
+        "}": .closingBrace,
+        "(": .openingParenthesis,
+        ")": .closingParenthesis,
+        ":": .colon,
+        ";": .semiColon,
+        ",": .comma,
+        "#": .sharp,
+        "%": .percent,
+        ".": .dot,
+        "*": .star,
+        "/": .forwardSlash
+    ]
+
     private var currentPosition: String.Index
     private var currentLine: Int
 
@@ -53,36 +68,15 @@ final class CSSTokenizer {
 
         hasWhitespaceBefore = countWhitespaces >= 1
 
-        switch firstCharacter {
-        case "{":
-            return CSSToken(line: currentLine, type: .openingBrace)
-        case "}":
-            return CSSToken(line: currentLine, type: .closingBrace)
-        case "(":
-            return CSSToken(line: currentLine, type: .openingParenthesis)
-        case ")":
-            return CSSToken(line: currentLine, type: .closingParenthesis)
-        case ":":
-            return CSSToken(line: currentLine, type: .colon)
-        case ";":
-            return CSSToken(line: currentLine, type: .semiColon)
-        case ",":
-            return CSSToken(line: currentLine, type: .comma)
-        case "#":
-            return CSSToken(line: currentLine, type: .sharp)
-        case "%":
-            return CSSToken(line: currentLine, type: .percent)
-        case ".":
-            return CSSToken(line: currentLine, type: .dot)
-        case "*":
-            return CSSToken(line: currentLine, type: .star)
-        case "/":
-            return CSSToken(line: currentLine, type: .forwardSlash)
-        case "\"":
-            return try getLiteralString()
-        default:
-            return try getGeneralToken(firstCharacter: firstCharacter)
+        if let type = tokenTypeBySymbol[firstCharacter] {
+            return CSSToken(line: currentLine, type: type)
         }
+
+        if firstCharacter == "\"" {
+            return try getLiteralString()
+        }
+
+        return try getGeneralToken(firstCharacter: firstCharacter)
     }
 
     private func getLiteralString() throws -> CSSToken {

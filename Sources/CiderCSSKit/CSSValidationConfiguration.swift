@@ -1,4 +1,4 @@
-public typealias CSSAttributeExpansion = (CSSToken, [CSSValue]) throws -> [String: [CSSValue]]
+public typealias CSSAttributeExpansion = @Sendable (CSSToken, [CSSValue]) throws -> [String: [CSSValue]]
 
 open class CSSValidationConfiguration {
 

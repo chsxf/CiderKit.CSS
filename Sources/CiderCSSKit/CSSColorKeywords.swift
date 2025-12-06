@@ -1,4 +1,4 @@
-public actor CSSColorKeywords {
+public struct CSSColorKeywords {
 
     static let colors: [String: CSSValue] = [
         "aliceblue": .color(CSSColorSpace.sRGB, [0.9412, 0.9725, 1.0000, 1.0]), // #F0F8FF

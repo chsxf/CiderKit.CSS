@@ -3,50 +3,18 @@ import XCTest
 
 final class CSSParserTests: XCTestCase {
 
-    private static var buffer: String!
-    private static var bufferWithComments: String!
-    private static var bufferWithInvalidComment: String!
-    private static var bufferCustom: String!
-    private static var bufferInvalidCustom: String!
-    private static var bufferInvalidCustom2: String!
-    private static var bufferRuleBlock: String!
+    private static let buffer: String = buildBuffer(named: "ParserTests")
+    private static let bufferWithComments: String = buildBuffer(named: "ParserTestsWithComments")
+    private static let bufferWithInvalidComment: String = buildBuffer(named: "ParserTestsWithInvalidComment")
+    private static let bufferCustom: String = buildBuffer(named: "ParserCustomTests")
+    private static let bufferInvalidCustom: String = buildBuffer(named: "ParserInvalidCustomTests")
+    private static let bufferInvalidCustom2: String = buildBuffer(named: "ParserInvalidCustomTests2")
+    private static let bufferRuleBlock: String = buildBuffer(named: "ParserRuleBlockTests")
 
-    override static func setUp() {
-        // swiftlint:disable force_try
-        let dataURL = Bundle.module.url(forResource: "ParserTests", withExtension: "ckcss")
+    private static func buildBuffer(named: String) -> String {
+        let dataURL = Bundle.module.url(forResource: named, withExtension: "ckcss")
         XCTAssertNotNil(dataURL)
-        Self.buffer = try! String(contentsOf: dataURL!)
-
-        let commentsDataURL = Bundle.module.url(forResource: "ParserTestsWithComments", withExtension: "ckcss")
-        XCTAssertNotNil(commentsDataURL)
-        Self.bufferWithComments = try! String(contentsOf: commentsDataURL!)
-
-        let invalidCommentsDataURL = Bundle.module.url(forResource: "ParserTestsWithInvalidComment", withExtension: "ckcss")
-        XCTAssertNotNil(invalidCommentsDataURL)
-        Self.bufferWithInvalidComment = try! String(contentsOf: invalidCommentsDataURL!)
-
-        let customDataURL = Bundle.module.url(forResource: "ParserCustomTests", withExtension: "ckcss")
-        XCTAssertNotNil(customDataURL)
-        Self.bufferCustom = try! String(contentsOf: customDataURL!)
-
-        let invalidCustomDataURL = Bundle.module.url(forResource: "ParserInvalidCustomTests", withExtension: "ckcss")
-        XCTAssertNotNil(invalidCustomDataURL)
-        Self.bufferInvalidCustom = try! String(contentsOf: invalidCustomDataURL!)
-
-        let invalidCustomDataURL2 = Bundle.module.url(forResource: "ParserInvalidCustomTests2", withExtension: "ckcss")
-        XCTAssertNotNil(invalidCustomDataURL2)
-        Self.bufferInvalidCustom2 = try! String(contentsOf: invalidCustomDataURL2!)
-
-        let ruleBlockDataURL = Bundle.module.url(forResource: "ParserRuleBlockTests", withExtension: "ckcss")
-        XCTAssertNotNil(ruleBlockDataURL)
-        Self.bufferRuleBlock = try! String(contentsOf: ruleBlockDataURL!)
-        // swiftlint:enable force_try
-    }
-
-    override static func tearDown() {
-        Self.buffer = nil
-        Self.bufferCustom = nil
-        Self.bufferRuleBlock = nil
+        return try! String(contentsOf: dataURL!)
     }
 
     func testBasicParsing() throws {

@@ -31,7 +31,7 @@ let package = Package(
             name: "CiderCSSKit",
             dependencies: [],
             swiftSettings: [
-                .enableExperimentalFeature("StrictConcurrency")
+                .enableUpcomingFeature("StrictConcurrency")
             ]),
         .testTarget(
             name: "CiderCSSKitTests",

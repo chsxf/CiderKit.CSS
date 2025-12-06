@@ -1,4 +1,4 @@
-public enum CSSValueType: Equatable {
+public enum CSSValueType: Equatable, Sendable {
 
     case angle
     case color

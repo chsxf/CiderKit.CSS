@@ -1,6 +1,6 @@
 import Foundation
 
-public enum CSSValue: Equatable, Sendable {
+public enum CSSValue: Equatable, Sendable, Copyable, Escapable {
 
     case angle(Float, CSSAngleUnit)
     case color(CSSColorSpace, [Float])

@@ -4,18 +4,12 @@ import XCTest
 
 final class CSSTokenizerTests: XCTestCase {
 
-    private static var buffer: String!
+    private static let buffer: String = buildBuffer()
 
-    override static func setUp() {
-        // swiftlint:disable force_try
+    private static func buildBuffer() -> String {
         let dataURL = Bundle.module.url(forResource: "TokenizerTests", withExtension: "ckcss")
         XCTAssertNotNil(dataURL)
-        Self.buffer = try! String(contentsOf: dataURL!)
-        // swiftlint:enable force_try
-    }
-
-    override static func tearDown() {
-        Self.buffer = nil
+        return try! String(contentsOf: dataURL!)
     }
 
     func testValidTokens() throws {

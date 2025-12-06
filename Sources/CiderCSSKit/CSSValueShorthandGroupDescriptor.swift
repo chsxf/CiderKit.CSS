@@ -1,4 +1,4 @@
-public struct CSSValueShorthandGroupDescriptor {
+public struct CSSValueShorthandGroupDescriptor: Sendable {
 
     public let subAttributeName: String
     public let optional: Bool

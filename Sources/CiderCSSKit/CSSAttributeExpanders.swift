@@ -1,5 +1,6 @@
 public final class CSSAttributeExpanders {
 
+    @Sendable
     public static func twoValuesExpander(attributeToken: CSSToken, values: [CSSValue]) throws -> [String: [CSSValue]] {
         var expandedValues = [CSSValue](values)
 
@@ -11,6 +12,7 @@ public final class CSSAttributeExpanders {
         return [ attributeName: expandedValues ]
     }
 
+    @Sendable
     public static func fourValuesExpander(attributeToken: CSSToken, values: [CSSValue]) throws -> [String: [CSSValue]] {
         var expandedValues = [CSSValue](values)
 
@@ -28,6 +30,7 @@ public final class CSSAttributeExpanders {
         return [ attributeName: expandedValues ]
     }
 
+    @Sendable
     static func expandPadding(attributeToken: CSSToken, values: [CSSValue]) throws -> [String: [CSSValue]] {
         var result = try fourValuesExpander(attributeToken: attributeToken, values: values)
 
@@ -40,6 +43,7 @@ public final class CSSAttributeExpanders {
         return result
     }
 
+    @Sendable
     static func expandTransformOrigin(attributeToken: CSSToken, values: [CSSValue]) throws -> [String: [CSSValue]] {
         var expanded: [CSSValue]
 

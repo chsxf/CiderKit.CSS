@@ -1,4 +1,4 @@
-public enum CSSValueGroupingType {
+public enum CSSValueGroupingType: Sendable, Copyable, Escapable {
 
     case single([CSSValueType])
     case multiple([CSSValueType], min: Int? = nil, max: Int? = nil, customExpansionMethod: CSSAttributeExpansion? = nil)

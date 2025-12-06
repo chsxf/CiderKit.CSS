@@ -1,4 +1,4 @@
-actor CSSValidationConfigurationConstants {
+struct CSSValidationConfigurationConstants {
 
     static let valueGroupingTypeByAttribute: [String: CSSValueGroupingType] = [
         CSSAttributes.backgroundColor: .single([.color]),

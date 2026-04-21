@@ -1,4 +1,4 @@
-@testable import CiderCSSKit
+@testable import CiderKit_CSS
 
 struct StubCustomValueHolder: Equatable {
     let value1: String

@@ -1,6 +1,6 @@
 import Foundation
 import XCTest
-@testable import CiderCSSKit
+@testable import CiderKit_CSS
 
 final class CSSTokenizerTests: XCTestCase {
 

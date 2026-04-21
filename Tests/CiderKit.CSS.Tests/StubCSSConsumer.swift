@@ -1,4 +1,4 @@
-import CiderCSSKit
+import CiderKit_CSS
 
 struct StubCSSConsumer: CSSConsumer {
 

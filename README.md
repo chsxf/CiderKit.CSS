@@ -1,17 +1,17 @@
 # ❓ About This Project
 
-CiderCSSKit is lightweight CSS parser written as a pure Swift package.
+CiderKit.CSS is lightweight CSS parser written as a pure Swift package.
 It was primarily designed to work with [CiderKit](https://github.com/chsxf/CiderKit), but the goal is to make it as agnostic as possible.
 
 ![](https://img.shields.io/badge/Platforms-macOS%2010.15%2B%20%7C%20iOS%2013%2B%20%7C%20iPadOS%2013%2B%20%7C%20tvOS%2013%2B%20%7C%20watchOS%206%2B%20%7C%20visionOS%201%2B-orange)
 ![](https://img.shields.io/badge/Swift-6.0%20%7C%205.10%20%7C%205.9-orange)
-![](https://github.com/chsxf/CiderCSSKit/actions/workflows/swift.yml/badge.svg)
+![](https://github.com/chsxf/CiderKit.CSS/actions/workflows/swift.yml/badge.svg)
 [![](https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg)](https://gitmoji.dev/)
 ![](https://analytics.chsxf.dev/GitHubStats.badge/CiderCSSKit/README.md)
 
 # 🪄 Features
 
-CiderCSSKit is still a work-in-progress. So many CSS features are not currenlty supported.
+CiderKit.CSS is still a work-in-progress. So many CSS features are not currenlty supported.
 
 Here's the list of existing and missing features:
 
@@ -58,17 +58,17 @@ The list of supported attributes is fairly limited for now but will expand over 
 
 Even if the ultimate goal is to support all syntax features, there is a long road ahead. Below is a list of short-term planned improvements:
 
-- [ ] Add support for `hsl()` color function ([#12](https://github.com/chsxf/CiderCSSKit/issues/12))
-- [ ] Add support for the adjacent sibling combinator (`+`) ([#6](https://github.com/chsxf/CiderCSSKit/issues/6))
-- [ ] Add support for the child combinator (`>`) ([#7](https://github.com/chsxf/CiderCSSKit/issues/7))
-- [ ] Add support for the general sibling combinator (`~`) ([#8](https://github.com/chsxf/CiderCSSKit/issues/8))
+- [ ] Add support for `hsl()` color function ([#12](https://github.com/chsxf/CiderKit.CSS/issues/12))
+- [ ] Add support for the adjacent sibling combinator (`+`) ([#6](https://github.com/chsxf/CiderKit.CSS/issues/6))
+- [ ] Add support for the child combinator (`>`) ([#7](https://github.com/chsxf/CiderKit.CSS/issues/7))
+- [ ] Add support for the general sibling combinator (`~`) ([#8](https://github.com/chsxf/CiderKit.CSS/issues/8))
 - [ ] Provides basic validation configurations for most common attributes, functions and keywords
 
-[Previously Closed Issues](https://github.com/chsxf/CiderCSSKit/issues?q=is%3Aissue+is%3Aclosed)
+[Previously Closed Issues](https://github.com/chsxf/CiderKit.CSS/issues?q=is%3Aissue+is%3Aclosed)
 
 # 🚀 Getting Started
 
-The full documentation of the package is available [here](https://chsxf.github.io/CiderCSSKit/documentation/cidercsskit).
+The full documentation of the package is available [here](https://chsxf.github.io/CiderKit.CSS/documentation/ciderkit_css).
 
 # 📦 Installation with Swift Package Manager
 
@@ -80,16 +80,16 @@ To install it, simply add the dependency to your `Package.swift` file:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/chsxf/CiderCSSKit.git", requirement: .branch("main")),
+    .package(url: "https://github.com/chsxf/CiderKit.CSS.git", requirement: .branch("main")),
 ],
 targets: [
-    .target(name: "YourTarget", dependencies: ["CiderCSSKit"]),
+    .target(name: "YourTarget", dependencies: ["CiderKit.CSS"]),
 ]
 ```
 
 ## As a Project Dependency in Xcode
 
-- In Xcode, select **File > Add Packages...** and enter `https://github.com/chsxf/CiderCSSKit.git` in the search field (top-right). 
+- In Xcode, select **File > Add Packages...** and enter `https://github.com/chsxf/CiderKit.CSS.git` in the search field (top-right). 
 - Then select **Branch** as the **Dependency Rule** with `main` in the associated text field.
 - Then select the project of your choice in the **Add to Project** list.
 - Finally, click the **Add Package** button.

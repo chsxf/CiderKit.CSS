@@ -11,10 +11,10 @@ OUTPUT_PATH="$SCRIPT_DIR-documentation/docs"
 swift package \
 	--allow-writing-to-directory $OUTPUT_PATH \
 	generate-documentation \
-	--target CiderCSSKit \
+	--target CiderKit.CSS \
 	--disable-indexing \
 	--transform-for-static-hosting \
-	--hosting-base-path CiderCSSKit \
+	--hosting-base-path CiderKit.CSS \
 	--output-path $OUTPUT_PATH
 
 if [[ "--push" == $1 ]]; then

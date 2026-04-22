@@ -14,7 +14,7 @@ final class CSSParserTests: XCTestCase {
     private static func buildBuffer(named: String) -> String {
         let dataURL = Bundle.module.url(forResource: named, withExtension: "ckcss")
         XCTAssertNotNil(dataURL)
-        return try! String(contentsOf: dataURL!)
+        return try! String(contentsOf: dataURL!) // swiftlint:disable:this force_try
     }
 
     func testBasicParsing() throws {

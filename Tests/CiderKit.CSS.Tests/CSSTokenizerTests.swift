@@ -7,9 +7,10 @@ final class CSSTokenizerTests: XCTestCase {
     private static let buffer: String = buildBuffer()
 
     private static func buildBuffer() -> String {
+
         let dataURL = Bundle.module.url(forResource: "TokenizerTests", withExtension: "ckcss")
         XCTAssertNotNil(dataURL)
-        return try! String(contentsOf: dataURL!)
+        return try! String(contentsOf: dataURL!) // swiftlint:disable:this force_try
     }
 
     func testValidTokens() throws {

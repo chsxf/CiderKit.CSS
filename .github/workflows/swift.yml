@@ -12,10 +12,10 @@ on:
 jobs:
   build:
 
-    runs-on: macos-14
+    runs-on: macos-26
 
     steps:
-    - uses: actions/checkout@v4.2.1
+    - uses: actions/checkout@v6
     - name: Install SwiftLint
       run: brew install swiftlint
     - name: SwiftLint
